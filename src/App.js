@@ -30,9 +30,9 @@ export default function App() {
   };
 
   return (
-    <>
+    <div className="container">
       <div>
-        <h1>Weather App</h1>
+        <h1 className="title">Weather App</h1>
       </div>
       <div>
         <form onSubmit={searchWeather}>
@@ -53,17 +53,17 @@ export default function App() {
         </form>
       </div>
       {weather && weather.timelines && weather.timelines.daily && (
-  <div>
-    <h2>Weather Results</h2>
-    {weather.timelines.daily.slice(0, 5).map((day, index) => (
-      <div key={index}>
-        <p>
-          {getDayOfWeek(index)}: High {Math.floor(day.values.temperatureMax)} °C, Low {Math.floor(day.values.temperatureMin)} °C
-        </p>
+      <div>
+        <h2 className="results--title">Forecast</h2>
+        {weather.timelines.daily.slice(0, 5).map((day, index) => (
+          <div key={index}>
+            <p className="results--temperature">
+              {getDayOfWeek(index)}: High {Math.floor(day.values.temperatureMax)} °C, Low {Math.floor(day.values.temperatureMin)} °C
+            </p>
+          </div>
+        ))}
       </div>
-    ))}
-  </div>
-)}
-    </>
+    )}
+    </div>
   );
 }
