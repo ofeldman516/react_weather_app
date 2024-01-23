@@ -5,6 +5,7 @@ import './App.css';
 export default function App() {
   const [query, setQuery] = useState('');
   const [weather, setWeather] = useState(null);
+  const [placeholder, setPlaceholder] = useState('i.e. Berlin');
 
   const searchWeather = async (e) => {
     e.preventDefault();
@@ -16,6 +17,7 @@ export default function App() {
       const data = await res.json();
       console.log(data)
       setWeather(data);
+      setPlaceholder('i.e. Berlin');
     } catch (err) {
       console.log(err);
     }
@@ -32,7 +34,7 @@ export default function App() {
   return (
     <div className="container">
       <div>
-        <h1 className="title">Weather App</h1>
+        <h1 className="title">Weather Forecast</h1>
       </div>
       <div>
         <form onSubmit={searchWeather}>
@@ -43,7 +45,7 @@ export default function App() {
             className='input'
             type='text'
             name='query'
-            placeholder='i.e. Berlin'
+            placeholder={placeholder}
             value={query}
             onChange={(e) => setQuery(e.target.value)}
           />
@@ -54,7 +56,7 @@ export default function App() {
       </div>
       {weather && weather.timelines && weather.timelines.daily && (
       <div>
-        <h2 className="results--title">Forecast</h2>
+        <h2 className="results--title">Results</h2>
         {weather.timelines.daily.slice(0, 5).map((day, index) => (
           <div key={index}>
             <p className="results--temperature">
@@ -67,3 +69,5 @@ export default function App() {
     </div>
   );
 }
+
+//if results are displayed, then display the placeholder
