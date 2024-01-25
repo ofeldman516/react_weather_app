@@ -10,8 +10,7 @@ export default function App() {
   const searchWeather = async (e) => {
     e.preventDefault();
 
-    const url = `https://api.tomorrow.io/v4/weather/forecast?location=${query}&apikey=FqoZV85twVhEoYs0uk4xEkkl2mAWJwdn`;
-
+    const url = `https://api.tomorrow.io/v4/weather/forecast?location=${query}&apikey=${process.env.REACT_APP_WEATHER_API_KEY}`
     try {
       const res = await fetch(url);
       const data = await res.json();
@@ -45,6 +44,7 @@ export default function App() {
             className='input'
             type='text'
             name='query'
+            id='query'
             placeholder={placeholder}
             value={query}
             onChange={(e) => setQuery(e.target.value)}
