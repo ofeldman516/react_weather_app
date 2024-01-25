@@ -70,4 +70,3 @@ export default function App() {
   );
 }
 
-//if results are displayed, then display the placeholder
