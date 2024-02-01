@@ -5,7 +5,6 @@ import './App.css';
 export default function App() {
   const [query, setQuery] = useState('');
   const [weather, setWeather] = useState(null);
-  const [placeholder, setPlaceholder] = useState('i.e. Berlin');
 
   const searchWeather = async (e) => {
     e.preventDefault();
@@ -16,7 +15,7 @@ export default function App() {
       const data = await res.json();
       console.log(data)
       setWeather(data);
-      setPlaceholder('i.e. Berlin');
+      setQuery('');
     } catch (err) {
       console.log(err);
     }
@@ -25,10 +24,9 @@ export default function App() {
   const getDayOfWeek = (index) => {
     const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
     const today = new Date();
-    const nextDay = new Date(today);
-    nextDay.setDate(today.getDate() + index);
-    return daysOfWeek[nextDay.getDay()];
-  };
+    const nextDayIndex = (today.getDay() + index) % 7;
+    return daysOfWeek[nextDayIndex];
+};
 
   return (
     <div className="container">
@@ -45,7 +43,7 @@ export default function App() {
             type='text'
             name='query'
             id='query'
-            placeholder={placeholder}
+            placeholder='i.e. Berlin'
             value={query}
             onChange={(e) => setQuery(e.target.value)}
           />
@@ -69,4 +67,3 @@ export default function App() {
     </div>
   );
 }
-
