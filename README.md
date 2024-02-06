@@ -15,6 +15,7 @@ cd react-weather-app
 Install dependencies:
 
 npm install
+
 Obtain an API key from Tomorrow.io by signing up for an account. Once you have the API key, create a .env file in the root directory of the project and add the following line:
 
 REACT_APP_WEATHER_API_KEY=your-api-key
