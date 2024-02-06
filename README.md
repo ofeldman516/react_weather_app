@@ -1,4 +1,4 @@
-# React Weather APP
+# React Weather App
 
 This is a simple weather app built using React. It allows users to search for weather information based on city names.
 
