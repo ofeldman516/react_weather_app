@@ -1,13 +1,10 @@
-#H1
-React Weather APP
+# React Weather APP
 
 This is a simple weather app built using React. It allows users to search for weather information based on city names.
 
-#H2
-Installation
+## Installation
 
-#H3
-Clone the repository:
+### Clone the repository:
 
 git clone https://github.com/ofeldman516/react_weather_app.git
 
@@ -27,7 +24,6 @@ Start the development server:
 npm start
 Open http://localhost:3000 in your web browser to view the app.
 
-#H3
-Usage
+### Usage
 Enter the name of a city in the search bar and press Enter or click the Search button.
 The app will display the current weather conditions and a 5-day forecast for the searched city.
