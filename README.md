@@ -23,6 +23,7 @@ REACT_APP_WEATHER_API_KEY=your-api-key
 Start the development server:
 
 npm start
+
 Open http://localhost:3000 in your web browser to view the app.
 
 ### Usage
