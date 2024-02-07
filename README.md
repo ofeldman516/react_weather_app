@@ -30,4 +30,4 @@ Open http://localhost:3000 in your web browser to view the app.
 Enter the name of a city in the search bar and press Enter or click the Search button.
 The app will display the current weather conditions and a 5-day forecast for the searched city.
 
-Test
+
