@@ -7,8 +7,8 @@ export default function App() {
   const [weather, setWeather] = useState(null);
 
   const searchWeather = async (query) => {
-    const url = `https://api.tomorrow.io/v4/weather/forecast?location=${query}&apikey=${process.env.REACT_APP_WEATHER_API_KEY}`
     try {
+      const url = `/getWeatherForecast?location=${query}`;
       const res = await fetch(url);
       const data = await res.json();
       setWeather(data);
