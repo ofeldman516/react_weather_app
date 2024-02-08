@@ -14,7 +14,9 @@ exports.getWeatherForecast = functions.https.onRequest(async (req, res) => {
 
   try {
     // Make a request to the Tomorrow.io API with API key
-    const apiKey = // functions/index.js
+    console.log('API Key:', process.env.REACT_APP_WEATHER_API_KEY);
+    
+    const apiKey = process.env.REACT_APP_WEATHER_API_KEY;
 
     const functions = require('firebase-functions');
     const fetch = require('node-fetch');
