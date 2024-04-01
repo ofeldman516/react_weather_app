@@ -13,8 +13,6 @@ export default function App() {
 
   const searchWeather = async (query) => {
     try {
-      // const url = `/getWeatherForecast?location=${query}`;
-      // const res = await fetch(url);
       const res = await getWeatherForecast(query);
       const data = await res.json();
       setWeather(data);
